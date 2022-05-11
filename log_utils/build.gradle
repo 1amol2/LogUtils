@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 012
+        versionName "0.1.0" 
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    
+    compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+	
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+}
+afterEvaluate {
+    publishing {
+    	publications {
+        	// Creates a Maven publication called "release".
+            release(MavenPublication) {
+            // Applies the component for the release build variant.
+            from components.release
+            
+            // You can then customise attributes of the publication as shown below.
+            groupId = 'com.amol.utils'
+            artifactId = 'LogUtils'
+            version = '0.1.0'
+            }
+        }
+    }
+}

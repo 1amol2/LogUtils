@@ -1,0 +1,37 @@
+buildscript {
+    ext {
+    	build_gradle_version = '7.0.2'
+    }
+    
+    project.ext {
+    	compileSdk = 30
+        buildTools = "30.0.2"
+        appId = "com.amol.utils.LogUtils"
+        minSdk = 23
+        targetSdk = 30
+        versionCode = 012
+		versionName = "0.1.0"
+    }
+    
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+    
+    dependencies {
+        classpath "com.android.tools.build:gradle:$build_gradle_version"
+    }
+    
+}
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
