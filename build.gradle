@@ -9,8 +9,8 @@ buildscript {
         appId = "com.amol.utils.LogUtils"
         minSdk = 23
         targetSdk = 30
-        versionCode = 012
-		versionName = "0.1.0"
+        versionCode = 014
+		versionName = "0.1.2"
     }
     
     repositories {
@@ -26,6 +26,7 @@ buildscript {
 }
 allprojects {
     repositories {
+    	maven { url 'https://jitpack.io' }
         google()
         mavenCentral()
         mavenLocal()
