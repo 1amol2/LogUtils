@@ -21,7 +21,7 @@ allprojects {
 
 ```gradle
 dependencies {
-    implementation 'com.github.1amol2:LogUtils:${LATEST_VERSION}'
+    implementation 'com.github.1amol2:LogUtils:0.1.2'
 }
 ```
 ## Implementing the code (Instructions)
